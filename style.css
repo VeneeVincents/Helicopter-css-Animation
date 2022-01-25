@@ -1,0 +1,140 @@
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: image();
+
+}
+.helicopter{
+  
+    animation: bounce 5s infinite;
+
+}
+.cockpit{
+    position: absolute;
+    overflow: hidden;
+    z-index: 1;
+    width: 195px;
+    height: 195px;
+    border-radius: 100px 40px 50px 50px;
+    background-color: deepskyblue;
+
+}
+.cockpit::before{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -10px;
+    left: -25px;
+    width: 170px;
+    height: 170px;
+    border-radius: 40px;
+    background-color: #302e37;
+
+     
+}
+.cockpit::after{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -16px;
+    left: -60px;
+    width: 170px;
+    height: 170px;
+    border-radius: 40px;
+    background-color: rgba(0,0,0,0.424);
+
+
+       
+
+}
+.tail{
+    position: absolute;
+    top: 50px;
+    left: 150px;
+    transform-origin: left center;
+    border-top: 10px solid transparent;
+    border-bottom: 80px solid transparent;
+    border-left: 350px solid #2fadd2;
+    border-bottom-right-radius: 10px;
+    height: 10px;
+
+     
+
+}
+.main{
+    position: absolute;
+    left: 130px;
+    top: -10px;
+    width: 40px;
+    height: 20px;
+    background-color: #302e37;
+
+}
+.rotor{
+     width: 700px;
+     height: 700px;
+     border-radius: 350px;
+     position:absolute;
+     top: -360px;
+     left: -200px;
+     z-index: 2;
+     background-color: #a299ab;
+     opacity: 0.12;
+     overflow: hidden;
+     transform: scaleY(0.075); 
+    
+}
+.rotator{
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border-radius: 350px;
+    animation: fly 0.06s linear infinite;
+
+
+
+
+
+
+
+
+}
+.rotator div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -350px;
+    margin-top: -30px;
+    width: 700px;
+    height: 80px;
+    background-color: white;
+    
+}
+  .rotator div:nth-child(2){
+      transform: rotate(0deg);
+  }
+  .rotator div:nth-child(2){
+      transform: rotate(90deg);
+  } 
+  /*keyframes for flying power*/
+  @keyframes bounce{
+      0%,100%{
+          transform: translate(0px,-50px)rotate(-15deg);
+      }
+      50%{
+          transform: translate(0px,50px)rotate(-10deg);
+      }
+
+  }
+  @keyframes fly{
+      0%{
+          transform: rotate(0deg);
+      }
+      100%{
+          transform: rotate(360deg);
+      }
+
+  }
